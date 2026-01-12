@@ -46,7 +46,7 @@ const App = () => {
           updateTasks={updateTask}
           deleteTasks={deleteTask}
         />
-        <ProgressTracker />
+        <ProgressTracker tasks={tasks}/>
       </main>
     </>
   );
