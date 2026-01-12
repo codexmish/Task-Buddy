@@ -16,6 +16,16 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
+  const updateTask = (updatedTask, index) => {
+    const newTask = [...tasks];
+    newTask[index] = updatedTask;
+    setTasks(newTask)
+  };
+
+  const deleteTask = () => {
+
+  };
+
   return (
     <>
       <header>
@@ -23,7 +33,11 @@ const App = () => {
         <p>Your friendly task Manager</p>
       </header>
       <TaskForm addTask={addTask} />
-      <TaskList />
+      <TaskList
+        tasks={tasks}
+        updateTasks={updateTask}
+        deleteTasks={deleteTask}
+      />
       <ProgressTracker />
     </>
   );
