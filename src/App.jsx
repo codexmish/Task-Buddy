@@ -28,17 +28,26 @@ const App = () => {
 
   return (
     <>
-      <header>
-        <h1>TaskBuddy</h1>
-        <p>Your friendly task Manager</p>
+      <header className="w-full bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-gray-800 dark:to-indigo-700 text-white py-6">
+        <div className="max-w-4xl mx-auto px-4 flex items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">TaskBuddy</h1>
+            <p className="text-sm text-indigo-100/90 dark:text-indigo-200 mt-1">Your friendly task manager</p>
+          </div>
+
+          
+        </div>
       </header>
-      <TaskForm addTask={addTask} />
-      <TaskList
-        tasks={tasks}
-        updateTasks={updateTask}
-        deleteTasks={deleteTask}
-      />
-      <ProgressTracker />
+
+      <main className="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+        <TaskForm addTask={addTask} />
+        <TaskList
+          tasks={tasks}
+          updateTasks={updateTask}
+          deleteTasks={deleteTask}
+        />
+        <ProgressTracker />
+      </main>
     </>
   );
 };
