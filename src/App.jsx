@@ -19,11 +19,11 @@ const App = () => {
   const updateTask = (updatedTask, index) => {
     const newTask = [...tasks];
     newTask[index] = updatedTask;
-    setTasks(newTask)
+    setTasks(newTask);
   };
 
-  const deleteTask = () => {
-
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i != index));
   };
 
   return (
